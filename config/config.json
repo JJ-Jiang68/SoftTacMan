@@ -1,0 +1,53 @@
+{
+  "device_settings": {
+      "robot_type": "XARM6",
+      "data_dir": "./",
+      "device": "cpu"
+  },
+  "task_config": {
+      "episode_len": 180,
+      "state_dim": 7,
+      "action_dim": 7,
+      "cam_width": 1920,
+      "cam_height": 1080,
+      "camera_names": ["front"],
+      "camera_port": 0,
+      "ros": {
+          "video_topic": "/usb_cam/image_raw",
+          "trajectory_topic": "/camera/odom/sample",
+          "queue_size": 1000
+      }
+  },
+  "data_process_config": {
+      "marker_id_0":0,
+      "marker_id_1":1,
+      "input_dir": "./Softacman/softacman_datacollect/processed_data/insert1024",
+      "output_dir": "./Softacman/softacman_datacollect/hdf5_data/insert1024",
+      "qpos_mode": "joint",
+      "camera_names": ["front"],
+      "urdf_path": "./assets/piper_description.urdf",
+      "base_position": {
+          "x": -0.155092691511126,
+          "y": -0.026741358419863,
+          "z": 0.526197744186155
+      },
+      "base_orientation": {
+          "roll": 179.94725,
+          "pitch": -89.999981,
+          "yaw": 0.0
+      },
+      "offset": {
+          "x": 0.14565,
+          "z": 0.1586
+      },
+      "start_qpos": [
+          0, 0, 0, 0, 
+          0, 0, 0, 0, 0
+      ],
+      "active_joint_mask": [
+        true, true, true, true,
+        true, true, true, false, true
+      ],
+      "upsample_factor": 2
+  }
+}
